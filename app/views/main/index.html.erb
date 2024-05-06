@@ -1,5 +1,14 @@
-<div class="d-flex align-items-center justify-content-center">
+<div class="d-flex justify-content-center">
     <h1>
         Welcome to our scherduled tweets!
     </h1>
+    <br>
+    
 </div>
+<% if Current.user%>
+    <h2>
+        Logged in as: <%= Current.user.email%>
+    </h2>
+    <%= button_to "Log out", logout_path, method: :delete%>
+
+<% end%>

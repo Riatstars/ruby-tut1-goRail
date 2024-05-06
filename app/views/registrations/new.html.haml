@@ -1,0 +1,19 @@
+%h1 Sign Up
+
+= form_with model: @user, data: { turbo: false}, url: sign_up_path  do |form|
+    - if @user.errors.any?
+        .alert.alert-danger
+            - @user.errors.full_messages.each do |message|
+                %div
+                    = message
+
+    .mb-3
+
+        = form.text_field :email, class: "form-control", placeholder: "Email"
+    .mb-3
+
+        = form.password_field :password, class: "form-control", placeholder: "Password"
+    .mb-3
+        = form.password_field :password_confirmation, class: "form-control", placeholder: "Password confirmation"
+    .mb-3
+        = form.submit class: "btn btn-primary"

@@ -1,0 +1,9 @@
+%h1 Sign In
+
+= form_with data: { turbo: false}, url: sign_in_path  do |form|
+    .mb-3 
+        = form.text_field :email, class: "form-control", placeholder: "Email"
+    .mb-3
+        = form.password_field :password, class: "form-control", placeholder: "Password"
+    .mb-3
+        = form.submit "Sign in",  class: "btn btn-primary"
