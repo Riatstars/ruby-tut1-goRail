@@ -1,17 +1,16 @@
-%h1 Sign Up
+%h1 Edit password
 
-= form_with model: @user, data: { turbo: false}, url: sign_up_path  do |form|
+= form_with model: Current.user, data: { turbo: false}, url: edit_password_path  do |form|
     - if form.object.errors.any?
         .alert.alert-danger
             - form.object.errors.full_messages.each do |message|
                 %div
                     = message
 
-    .mb-3
-        = form.text_field :email, class: "form-control", placeholder: "Email"
+
     .mb-3
         = form.password_field :password, class: "form-control", placeholder: "Password"
     .mb-3
         = form.password_field :password_confirmation, class: "form-control", placeholder: "Password confirmation"
     .mb-3
-        = form.submit class: "btn btn-primary"
+        = form.submit "Update password", class: "btn btn-primary"

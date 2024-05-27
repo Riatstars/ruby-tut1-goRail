@@ -1,0 +1,9 @@
+%h1 Reset your password?
+
+= form_with model: @user, url: password_reset_edit_path do |form|
+    .mb-3
+        = form.password_field :password, class: "form-control", placeholder: "Password"
+    .mb-3
+        = form.password_field :password_confirmation, class: "form-control", placeholder: "Password confirmation"
+    .mb-3
+        = form.submit "Reset Password", class: "btn btn-primary"

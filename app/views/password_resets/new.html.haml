@@ -1,0 +1,7 @@
+%h1 Forgot your password?
+
+= form_with url: password_reset_path do |form|
+    .mb-3
+        = form.text_field :email, class: "form-control", placeholder: "Email"
+    .mb-3
+        = form.submit "Reset Password", class: "btn btn-primary"
